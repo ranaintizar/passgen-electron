@@ -7,7 +7,10 @@
   "author": "ranaintizar <intizaralirana2@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build:win": "electron-packager . PassGen --platform=win32 --arch=x64",
+    "build:linux": "electron-packager . PassGen --platform=linux --arch=x64",
+    "build:mac": "electron-packager . PassGen --platform=darwin"
   },
   "devDependencies": {
     "electron": "^26.1.0"
