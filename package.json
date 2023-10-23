@@ -13,6 +13,6 @@
     "build:mac": "electron-packager . PassGen --platform=darwin"
   },
   "devDependencies": {
-    "electron": "^26.1.0"
+    "electron": "^26.2.4"
   }
 }
