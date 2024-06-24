@@ -1,6 +1,6 @@
 {
   "name": "pass-gen",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Password Generator",
   "main": "main.js",
   "repository": "https://github.com/ranathedev/passgen-electron.git",
@@ -8,9 +8,9 @@
   "license": "MIT",
   "scripts": {
     "start": "electron .",
-    "build:win": "npx electron-packager . PassGen --platform=win32 --arch=x64",
-    "build:linux": "npx electron-packager . PassGen --platform=linux --arch=x64",
-    "build:mac": "npx electron-packager . PassGen --platform=darwin",
+    "build:win": "electron-packager . PassGen --platform=win32 --arch=x64 --out=dist",
+    "build:linux": "electron-packager . PassGen --platform=linux --arch=x64",
+    "build:mac": "electron-packager . PassGen --platform=darwin --out=dist",
     "pack": "electron-builder --dir",
     "dist": "electron-builder --linux snap"
   },
@@ -22,7 +22,11 @@
     "Simple Password Generator"
   ],
   "devDependencies": {
-    "electron": "^26.2.4",
-    "electron-builder": "^24.9.1"
+    "electron": "^31.0.2",
+    "electron-builder": "^24.9.1",
+    "electron-packager": "^17.1.2"
+  },
+  "dependencies": {
+    "electron-store": "^10.0.0"
   }
 }
