@@ -1,0 +1,31 @@
+name: pass-gen
+base: core20
+version: '1.1.1'
+summary: Create strong, secure passwords effortlessly with our Password Generator App.
+description: |
+  The Pass-Gen is a robust and intuitive application designed to simplify the process of creating strong and secure passwords. With an easy-to-use interface, users can effortlessly generate complex passwords tailored to meet stringent security requirements.
+
+grade: stable
+confinement: strict
+
+parts:
+  pass-gen:
+    plugin: dump
+    source: dist/pass-gen_1.1.1_amd64.snap
+    override-prime: |
+      snapcraftctl prime
+
+apps:
+  pass-gen:
+    command: pass-gen
+    plugs:
+      - desktop
+      - desktop-legacy
+      - x11
+      - unity7
+      - browser-support
+      - network
+      - pulseaudio
+      - home
+      - gsettings
+      - opengl
